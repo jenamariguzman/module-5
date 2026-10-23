@@ -1,0 +1,105 @@
+class Student {
+    constructor(score) {
+        this.score = score;
+    }
+
+    get score() {
+        return this._score;
+    }
+
+    set score(value) {
+        if (value < 0) {
+            console.log("no negative scores");
+        } else {
+            this._score = value;
+        }
+    }
+}
+
+const ana = new Student(90);
+ana.score = -5;
+console.log(ana.score);
+
+class Product {
+    constructor(name, price) {
+        this.name = name;
+        this.price = price;
+    }
+
+    get price() {
+        return this._price;
+    }
+
+    set price(value) {
+        if (value < 0) {
+            console.log("no negative prices");
+        } else {
+            this._price = value;
+        }
+    }
+}
+
+const pen = new Product("Pen", 25);
+pen.price = -10;
+console.log(pen.price);
+
+
+class Animal1 {
+    eat() {
+        console.log("Barking...");
+    }
+}
+
+class Dog1 extends Animal1 {
+    bark() {
+        console.log("Woof!");
+    }
+}
+
+const dog1 = new Dog1();
+dog1.eat();
+dog1.bark();
+
+class Animal2 {
+    constructor(name) {
+        this.name = name;
+    }
+}
+
+class Cat2 extends Animal2 {
+    constructor(name) {
+        super(name);
+    }
+}
+
+const cat = new Cat2("kalong");
+console.log(cat.name);
+
+
+class Animal3 {
+    speak() {
+        console.log("...");
+    }
+}
+
+class Dog3 extends Animal3 {
+    speak() {
+        console.log("Woof!");
+    }
+}
+
+class Cat3 extends Animal3 {
+    speak() {
+        console.log("Meow!");
+    }
+}
+
+class Cow3 extends Animal3 {
+    speak() {
+        console.log("Moo!");
+    }
+}
+
+new Dog3().speak();
+new Cat3().speak();
+new Cow3().speak();
